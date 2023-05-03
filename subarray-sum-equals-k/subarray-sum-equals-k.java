@@ -13,7 +13,14 @@ class Solution {
             if (hashMap.containsKey(x)) {
                 count += hashMap.get(x);
             }
-            hashMap.put(prefixSum, hashMap.getOrDefault(prefixSum, 0) + 1); //getOrDefault means if the value of key (prefixSum) is already present then increment it by 1 else put default value i.e., 0.
+            // hashMap.put(prefixSum, hashMap.getOrDefault(prefixSum, 0) + 1); //getOrDefault means if the value of key (prefixSum) is already present then increment it by 1 else put default value i.e., 0. We can do this with another way i.e.,
+
+            if (hashMap.get(prefixSum) == null) {
+                hashMap.put(prefixSum, 1);
+            }
+            else {
+                hashMap.put(prefixSum, hashMap.get(prefixSum)+1);
+            }
         }
 
         return count;
