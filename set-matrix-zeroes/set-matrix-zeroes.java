@@ -1,5 +1,6 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
+        // Optimal Solution
         int row = matrix.length;
         int col = matrix[0].length;
 
